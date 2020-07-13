@@ -1,0 +1,17 @@
+# Framework de desarrollo.
+Django==3.0
+
+# Herramientas para crear interfaces bajo el estándar REST.
+djangorestframework==3.11.0
+
+# Libreria para debugear
+ipdb==0.13.2
+
+# Librería para Linting.
+flake8==3.7.9
+
+#Imágenes
+pillow==7.2.0
+
+# Librería con herramientas para django.
+django-extensions==2.2.9
