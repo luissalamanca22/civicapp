@@ -6,25 +6,32 @@ from django.core.validators import RegexValidator
 class Timestamped(models.Model):
     """
     """
-
-    created = models.DateTimeField(
-        'created at',
-        auto_now_add=True,
-        help_text='Date time on which the object was created.'
+    ip_creacion = models.GenericIPAddressField(
+        verbose_name=("IP de creación"),
+        null=True,
+        blank=True
     )
-    modified = models.DateTimeField(
-        'modified at',
+    fecha_creacion = models.DateTimeField(
+        'Fecha de creacion',
+        auto_now_add=True,
+        help_text='Fecha hora en que se creó el objeto.'
+    )
+    ip_modificacion = models.GenericIPAddressField(
+        verbose_name=("IP de modificación"),
+        null=True,
+        blank=True
+    )
+    fecha_modificacion = models.DateTimeField(
+        'Fecha de Modificación',
         auto_now=True,
-        help_text='Date time on which the object was last modified.'
+        help_text='Fecha y hora en que se modificó el objeto por última vez.'
     )
 
     class Meta:
         """Meta option."""
-
         abstract = True
-
-        get_latest_by = 'created'
-        ordering = ['-created', '-modified']
+        get_latest_by = 'fecha_creacion'
+        ordering = ['-fecha_creacion', '-fecha_modificacion']
 
 
 class User(Timestamped, AbstractUser):
