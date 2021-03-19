@@ -2,7 +2,7 @@
 Django==3.0
 
 # Herramientas para crear interfaces bajo el estándar REST.
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 django-filter==2.3.0
 
 # Libreria para debugear
